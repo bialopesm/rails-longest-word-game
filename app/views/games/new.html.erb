@@ -1,0 +1,9 @@
+<h1>Longest Word Game</h1>
+<div>
+  <h2>Letters: <%= @letters.join(" ") %></h2>
+  <%= form_with url: '/games/score', method: :post, data: { turbo: false } do |form| %>
+    <%= form.text_field :word %>
+    <%= form.hidden_field :letters, value: @letters.join(',') %>
+    <%= form.submit 'Submit' %>
+  <% end %>
+</div>

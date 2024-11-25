@@ -1,0 +1,7 @@
+<h1>Score</h1>
+<p>Your word: <%= @word %></p>
+<p>Score: <%= @score %></p>
+<% if @score == 0 %>
+  <p><%= @error_message || "Palavra inválida." %></p>
+<% end %>
+<%= link_to 'New Game', '/games/new' %>
